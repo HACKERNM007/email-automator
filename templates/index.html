@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Automator ✨</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="blob shape1"></div>
+    <div class="blob shape2"></div>
+    
+    <div class="container">
+        <header>
+            <h1>Email Automator ✨</h1>
+            <p>Send personalized bulk emails with a clean, modern interface.</p>
+        </header>
+
+        <form id="emailForm" class="glass-form">
+            
+            <div class="form-section">
+                <h2>1. SMTP Configuration</h2>
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label for="host">SMTP Host</label>
+                        <input type="text" id="host" placeholder="smtp.gmail.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="port">Port</label>
+                        <input type="number" id="port" placeholder="587" required>
+                    </div>
+                </div>
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label for="address">Email Address</label>
+                        <input type="email" id="address" placeholder="your_email@example.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">App Password</label>
+                        <input type="password" id="password" placeholder="••••••••••••" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>2. Email Content</h2>
+                <div class="input-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" placeholder="Welcome to our platform!" required>
+                </div>
+                <div class="input-group">
+                    <label for="template">Message Template (Use ${PERSON_NAME} for variables)</label>
+                    <textarea id="template" rows="5" placeholder="Hello ${PERSON_NAME},&#10;&#10;We are excited to have you on board!..." required></textarea>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>3. Contacts List</h2>
+                <div class="input-group">
+                    <label for="contacts">Names & Emails (One per line format: Name Email)</label>
+                    <textarea id="contacts" rows="5" placeholder="John Doe john@example.com&#10;Alice Smith alice@example.com" required></textarea>
+                </div>
+            </div>
+
+            <button type="submit" id="submitBtn">
+                <span class="btn-text">Send Emails 🚀</span>
+                <span class="loader hidden"></span>
+            </button>
+            
+            <div id="notification" class="notification hidden">
+                <p id="notificationMessage"></p>
+            </div>
+        </form>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
